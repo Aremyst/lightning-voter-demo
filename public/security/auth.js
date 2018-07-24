@@ -31,6 +31,7 @@ angular.module('app').factory('auth', function($q, $http, currentIdentity) {
       var dfd = $q.defer();
       
       $http.get('/api/currentIdentity').then(function(response) {
+        // If response data is retrieved, assign it to 'currentUser'.
         if(!!response.data) {
           currentIdentity.setUser(response.data);
         }

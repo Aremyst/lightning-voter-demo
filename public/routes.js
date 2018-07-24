@@ -4,6 +4,7 @@
 app.config(function($routeProvider) {
   // Resolvers, which return promises.
   var routeResolvers = {
+    // 'auth' is a service, which is injected.
     loggedIn: function(auth) {
       return auth.requireLogin();
     },
@@ -80,7 +81,7 @@ app.config(function($routeProvider) {
       templateUrl: 'home/home.html',
       controllerAs: 'vm',
       resolve: {
-        login:routeResolvers.loggedIn,
+        login: routeResolvers.loggedIn,
         userSessions: routeResolvers.userSessions
       }
     })
