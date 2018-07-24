@@ -3,9 +3,9 @@ angular.module('app').factory('unreviewedSessionCount', function(sessions, curre
     value: 0,
     updateUnreviewedSessionCount: function() {
       sessions.getUnreviewedCount(currentIdentity.currentUser.id)
-          .then(function(response) {
-        this.value = response.data.count;
-      }.bind(this))
+        .then(function(response) {
+          this.value = response.data.count;
+        }.bind(this))
     }
   }
-})
+});

@@ -30,7 +30,7 @@ app.config(function($routeProvider) {
       });
     }
   };
-  
+
   // Config ng-routes via $routeProvider.
   $routeProvider
     .when('/admin/login', {
@@ -72,7 +72,7 @@ app.config(function($routeProvider) {
       controller: 'createUsersCtrl',
       templateUrl: 'admin/createUsers.html',
       controllerAs: 'vm',
-      resolve:  {
+      resolve: {
         admin: routeResolvers.requireAdmin
       }
     })

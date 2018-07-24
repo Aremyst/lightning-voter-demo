@@ -9,10 +9,10 @@ app.run(function($rootScope, $location) {
   $rootScope.$on("$routeChangeError", function(e, next, prev, err) {
     // If auth service returned "AUTH_REQUIRED" or "NOT_AUTHORIZED"
     // from 'requireLogin' or 'requireAdmin' resolvers.
-    if(err === "AUTH_REQUIRED") {
+    if (err === "AUTH_REQUIRED") {
       $location.path("/login");
     }
-    if(err === 'NOT_AUTHORIZED') {
+    if (err === 'NOT_AUTHORIZED') {
       $location.path("/home");
     }
   })

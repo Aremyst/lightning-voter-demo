@@ -1,7 +1,7 @@
 angular.module('app').factory('currentIdentity', function($http, $q) {
   return {
     currentUser: null,
-    
+
     setUser: function(user) {
       this.currentUser = user;
     },
@@ -13,8 +13,8 @@ angular.module('app').factory('currentIdentity', function($http, $q) {
     },
     updateUser: function(newUserObj) {
       var dfd = $q.defer();
-      
-      
+
+
       $http.put('/api/users/' + this.currentUser.id, newUserObj).then(function(response) {
         this.currentUser.firstName = newUserObj.firstName;
         this.currentUser.lastName = newUserObj.lastName;

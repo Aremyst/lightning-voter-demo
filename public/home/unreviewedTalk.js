@@ -7,14 +7,14 @@ angular.module('app').directive('unreviewedTalk', function() {
       voteNo: '&'
     },
     controller: function($scope) {
-      
+
       $scope.yes = function() {
         this.voteYes();
-      }
-      
+      };
+
       $scope.no = function() {
         this.voteNo();
       }
     }
   }
-})
+});

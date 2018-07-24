@@ -1,9 +1,9 @@
 angular.module('app')
   .controller('loginCtrl', function($location, currentIdentity, auth, toastr) {
-    if(currentIdentity.authenticated()) {
+    if (currentIdentity.authenticated()) {
       $location.path('/home');
     }
-    
+
     this.login = function() {
       auth.login({
         // this.email is set from the View.
@@ -15,4 +15,4 @@ angular.module('app')
         toastr.error(err);
       })
     }
-});
+  });
