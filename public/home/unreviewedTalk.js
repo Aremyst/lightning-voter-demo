@@ -1,18 +1,28 @@
 angular.module('app').directive('unreviewedTalk', function() {
   return {
     templateUrl: '/home/unreviewedTalk.html',
+    // Same as below.
     scope: {
       session: '=',
       voteYes: '&',
       voteNo: '&'
     },
-    controller: function($scope) {
+    bindToController: true,
+    // DN: Same as above.
+    // scope: {},
+    // bindToController: {
+    //   session: '=',
+    //   voteYes: '&',
+    //   voteNo: '&'
+    // },
+    controllerAs: '$ctrl',
+    controller: function() {
 
-      $scope.yes = function() {
+      this.yes = function() {
         this.voteYes();
       };
 
-      $scope.no = function() {
+      this.no = function() {
         this.voteNo();
       }
     }
