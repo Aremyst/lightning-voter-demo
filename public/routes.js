@@ -1,5 +1,8 @@
-
+// '.config' block is executed before '.run'.
+// It allows to inject only providers(to configure services) and constants.
+// It's not possible to inject anything else(including services instances).
 app.config(function($routeProvider) {
+  // Resolvers, which return promises.
   var routeResolvers = {
     loggedIn: function(auth) {
       return auth.requireLogin();
@@ -25,14 +28,15 @@ app.config(function($routeProvider) {
         return users.getAllUsers();
       });
     }
-    
-  }
+  };
   
+  // Config ng-routes via $routeProvider.
   $routeProvider
     .when('/admin/login', {
       controller: 'adminLoginCtrl',
       templateUrl: 'admin/adminLogin.html',
       resolve: {
+        // User resolve from above.
         currentAuth: routeResolvers.waitForAuth
       }
     })
@@ -85,7 +89,7 @@ app.config(function($routeProvider) {
       templateUrl: 'profile/profile.html',
       controllerAs: 'vm',
       resolve: {
-        userProfile: routeResolvers.loggedIn,
+        userProfile: routeResolvers.loggedIn
       }
     })
     .when('/createsession', {
@@ -93,7 +97,7 @@ app.config(function($routeProvider) {
       templateUrl: 'home/createNewSession.html',
       controllerAs: 'vm',
       resolve: {
-        userSessions: routeResolvers.userSessions,
+        userSessions: routeResolvers.userSessions
       }
     })
     .when('/login', {
@@ -110,4 +114,4 @@ app.config(function($routeProvider) {
       template: '<logout></logout>'
     })
     .otherwise('/home')
-})
+});

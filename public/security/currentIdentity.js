@@ -21,7 +21,7 @@ angular.module('app').factory('currentIdentity', function($http, $q) {
         dfd.resolve();
       }.bind(this), function(response) {
         dfd.reject("Error Logging Out");
-      })
+      });
       return dfd.promise;
     }
   }
