@@ -1,15 +1,17 @@
 angular.module('app').controller('adminLoginCtrl',
-  function($location, currentIdentity, auth, toastr, $scope) {
+  function($location, currentIdentity, auth, toastr) {
+    // this.email and this.password vars will be created from the View.
 
-    $scope.loggedIn = currentIdentity.authenticated();
-    if ($scope.loggedIn) {
+    this.loggedIn = currentIdentity.authenticated();
+    // Redirect User to /home if he's logged in already.
+    if (this.loggedIn) {
       $location.path('/home');
     }
 
-    $scope.login = function() {
+    this.login = function() {
       auth.login({
-        username: $scope.email,
-        password: $scope.password
+        username: this.email,
+        password: this.password
       }).then(function() {
         $location.path('/home');
       }, function(err) {
