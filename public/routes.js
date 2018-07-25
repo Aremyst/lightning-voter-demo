@@ -34,9 +34,7 @@ app.config(function($routeProvider) {
   // Config ng-routes via $routeProvider.
   $routeProvider
     .when('/admin/login', {
-      controller: 'adminLoginCtrl',
-      templateUrl: 'admin/adminLogin.html',
-      controllerAs: '$ctrl',
+      template: '<admin-login></admin-login>',
       resolve: {
         // User resolve from above.
         currentAuth: routeResolvers.waitForAuth
