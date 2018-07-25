@@ -41,8 +41,7 @@ app.config(function($routeProvider) {
       }
     })
     .when('/admin/results', {
-      controller: 'resultsCtrl',
-      templateUrl: 'admin/results.html',
+      template: '<results all-sessions="$resolve.allSessions"></results>',
       controllerAs: 'vm',
       resolve: {
         admin: routeResolvers.requireAdmin,
