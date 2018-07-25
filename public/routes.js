@@ -75,9 +75,7 @@ app.config(function($routeProvider) {
       }
     })
     .when('/home', {
-      controller: 'homeCtrl',
-      templateUrl: 'home/home.html',
-      controllerAs: 'vm',
+      template: '<home user-sessions="$resolve.userSessions"></home>',
       resolve: {
         login: routeResolvers.loggedIn,
         userSessions: routeResolvers.userSessions
