@@ -1,6 +1,6 @@
-<detail-panel collapsed="{{vm.initialCollapsed}}" title="{{vm.session.title}}">
-  <strong>{{vm.session.length | talkDuration}}</strong>
+<detail-panel collapsed="{{$ctrl.initialCollapsed}}" title="{{$ctrl.session.title}}">
+  <strong>{{$ctrl.session.length | talkDuration}}</strong>
   <p>
-    <small>{{vm.session.abstract}}</small>
+    <small>{{$ctrl.session.abstract}}</small>
   </p>
 </detail-panel>
