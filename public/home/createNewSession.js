@@ -1,7 +1,9 @@
-angular.module('app').controller('createNewSessionCtrl',
-  function(toastr, userSessions, currentIdentity, sessions) {
-    this.userSessions = userSessions;
-
+angular.module('app').component('createNewSession', {
+  templateUrl: '/home/createNewSession.html',
+  bindings: {
+    userSessions: '='
+  },
+  controller: function(toastr, currentIdentity, sessions) {
     this.create = function() {
       var newUserSession = {
         title: this.title,
@@ -18,4 +20,5 @@ angular.module('app').controller('createNewSessionCtrl',
       }.bind(this))
 
     }
-  });
+  }
+});
