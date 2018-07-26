@@ -1,5 +1,8 @@
-angular.module('app')
-  .controller('loginCtrl', function($location, currentIdentity, auth, toastr) {
+angular.module('app').component('login', {
+  templateUrl: '/security/login.html',
+  bindings: {
+  },
+  controller: function($location, currentIdentity, auth, toastr) {
     if (currentIdentity.authenticated()) {
       $location.path('/home');
     }
@@ -15,4 +18,5 @@ angular.module('app')
         toastr.error(err);
       })
     }
-  });
+  }
+});
