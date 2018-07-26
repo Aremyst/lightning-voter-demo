@@ -76,9 +76,7 @@ app.config(function($routeProvider) {
       }
     })
     .when('/profile', {
-      controller: 'profileCtrl',
-      templateUrl: 'profile/profile.html',
-      controllerAs: 'vm',
+      template: '<profile></profile>',
       resolve: {
         userProfile: routeResolvers.loggedIn
       }
