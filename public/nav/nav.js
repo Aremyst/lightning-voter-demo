@@ -1,18 +1,12 @@
-angular.module('app').directive('nav', function() {
+angular.module('app').component('nav', {
+  templateUrl: '/nav/nav.html',
+  bindings: {},
+  controller: function(currentIdentity, sessions, unreviewedSessionCount) {
 
-  return {
-    templateUrl: '/nav/nav.html',
-    scope: {},
-    controllerAs: "vm",
-    bindToController: true,
-    controller: function(currentIdentity, sessions, unreviewedSessionCount) {
+    this.currentUser = currentIdentity.currentUser;
 
-      this.currentUser = currentIdentity.currentUser;
+    unreviewedSessionCount.updateUnreviewedSessionCount();
+    this.unreviewedSessionCount = unreviewedSessionCount;
 
-      unreviewedSessionCount.updateUnreviewedSessionCount();
-      this.unreviewedSessionCount = unreviewedSessionCount;
-
-    }
   }
-
 });
