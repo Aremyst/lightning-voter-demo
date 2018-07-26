@@ -1,7 +1,7 @@
-<detail-panel collapsed="{{vm.initialCollapsed}}" title="{{vm.session.title}}">
-  <strong>{{vm.session.voteCount}} votes</strong>
-  <p>{{vm.session.length | talkDuration}}</p>
+<detail-panel collapsed="{{$ctrl.initialCollapsed}}" title="{{$ctrl.session.title}}">
+  <strong>{{$ctrl.session.voteCount}} votes</strong>
+  <p>{{$ctrl.session.length | talkDuration}}</p>
   <p>
-    <small>{{vm.session.abstract}}</small>
+    <small>{{$ctrl.session.abstract}}</small>
   </p>
 </detail-panel>
