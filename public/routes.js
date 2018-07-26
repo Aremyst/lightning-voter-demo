@@ -65,9 +65,7 @@ app.config(function($routeProvider) {
       }
     })
     .when('/admin/createusers', {
-      controller: 'createUsersCtrl',
-      templateUrl: 'admin/createUsers.html',
-      controllerAs: 'vm',
+      template: '<create-users></create-users>',
       resolve: {
         admin: routeResolvers.requireAdmin
       }
