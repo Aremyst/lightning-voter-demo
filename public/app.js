@@ -17,3 +17,13 @@ app.run(function($rootScope, $location) {
     }
   })
 });
+
+// Execute Angular Bootstrapping when HTML is fully rendered.
+// angular.element(callback) is similar to $document.ready().
+angular.element(function() {
+  // 'document' is just a JS variable defined by browser.
+  //   It's a DOM element, same as $(document).get(0).
+  //   'document.body' is a <body> DOM element.
+  // 'app' - name of the main module.
+  angular.bootstrap(document.body, ['app']);
+});
