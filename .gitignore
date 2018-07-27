@@ -5,3 +5,4 @@ public/app.js
 public/home/home.js
 public/home/createNewSession.js
 public/sessions/sessions.js
+public/security/login.js
