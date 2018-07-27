@@ -5,7 +5,7 @@ angular.module('app').component('createNewSession', {
   },
   controller: function(toastr, currentIdentity, sessions) {
     this.create = function() {
-      var newUserSession = {
+      let newUserSession = {
         title: this.title,
         length: parseInt(this.length),
         abstract: this.abstract,
