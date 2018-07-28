@@ -7,3 +7,5 @@ public/home/createNewSession.js
 public/sessions/sessions.js
 public/security/login.js
 public/security/auth.js
+public/admin/createUsers.js
+public/admin/nameParser.js
