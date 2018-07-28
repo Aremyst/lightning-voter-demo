@@ -23,11 +23,11 @@ angular.module('app').service('currentIdentity', class CurrentIdentity {
   updateUser(newUserObj) {
     var dfd = this.$q.defer();
 
-    this.$http.put('/api/users/' + this.currentUser.id, newUserObj).then(function(response) {
+    this.$http.put('/api/users/' + this.currentUser.id, newUserObj).then(response => {
         this.currentUser.firstName = newUserObj.firstName;
         this.currentUser.lastName = newUserObj.lastName;
         dfd.resolve();
-    }.bind(this), function(response) {
+    }, response => {
         dfd.reject("Error Logging Out");
     });
     return dfd.promise;

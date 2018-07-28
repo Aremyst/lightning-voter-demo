@@ -11,3 +11,4 @@ public/admin/createUsers.js
 public/admin/nameParser.js
 public/security/currentIdentity.js
 public/security/users.js
+public/sessions/unreviewedSessionCount.js
