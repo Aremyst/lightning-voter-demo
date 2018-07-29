@@ -23,6 +23,8 @@ describe('userDetails', function() {
         ]
       });
 
+    ctrl.$onInit();
+
     expect(ctrl.user.name).toBe('correct');
   })
 });

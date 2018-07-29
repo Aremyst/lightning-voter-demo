@@ -27,3 +27,9 @@ angular.element(document).ready(() => {
   // 'app' - name of the main module.
   angular.bootstrap(document.body, ['app']);
 });
+
+app.config(['$locationProvider', function($locationProvider) {
+  // Change URL's hashbang #! into #
+  $locationProvider.hashPrefix('');
+}]);
+
