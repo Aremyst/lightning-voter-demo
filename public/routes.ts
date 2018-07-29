@@ -1,7 +1,7 @@
 // '.config' block is executed before '.run'.
 // It allows to inject only providers(to configure services) and constants.
 // It's not possible to inject anything else(including services instances).
-app.config(function($routeProvider) {
+angular.module('app').config(function($routeProvider) {
   // Resolvers, which return promises.
   var routeResolvers = {
     // 'auth' is a service, which is injected.
