@@ -14,7 +14,7 @@ angular.module('app').service('users', class Users {
   getAllUsers() {
     var dfd = this.$q.defer();
 
-    this.$http.get('/api/users').then(function(response) {
+    this.$http.get('/api/users').then(response => {
       dfd.resolve(response.data);
     });
 

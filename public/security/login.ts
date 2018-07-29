@@ -4,14 +4,12 @@ angular.module('app').component('login', {
   },
   controller: class LoginCtrl {
     $location: any;
-    currentIdentity: any;
     auth: any;
     toastr: any;
     email: string;
 
     constructor($location, currentIdentity, auth, toastr) {
         this.$location = $location;
-        this.currentIdentity = currentIdentity;
         this.auth = auth;
         this.toastr = toastr;
 

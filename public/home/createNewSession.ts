@@ -15,7 +15,6 @@ angular.module('app').component('createNewSession', {
       };
 
       sessions.createNewSession(newUserSession).then(function(response) {
-        console.log(response);
         this.userSessions.push(response.data);
       }.bind(this))
 

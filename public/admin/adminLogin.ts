@@ -2,7 +2,6 @@ angular.module('app').component('adminLogin', {
   templateUrl: '/admin/adminLogin.html',
   // Same thing as 'scope' or 'bindToController'.
   bindings: {
-    // data: '='
   },
   controller: function($location, currentIdentity, auth, toastr) {
     // this.email and this.password vars will be created from the View.

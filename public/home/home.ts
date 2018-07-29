@@ -29,12 +29,12 @@ angular.module('app')
 
       this.voteNo = function() {
         sessions.addReviewedSession(this.currentUser.id, this.currentSessionToReview.id)
-          .then(function() {
+          .then(() => {
             this.setNextSessionToReview();
 
             // pull updated value
             unreviewedSessionCount.updateUnreviewedSessionCount();
-          }.bind(this));
+          });
       };
     }
   });
