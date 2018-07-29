@@ -1,5 +1,5 @@
 angular.module('app').component('profile', {
-  templateUrl: '/profile/profile.html',
+  templateUrl: './profile.html',
   bindings: {
   },
   controller: function($location, toastr, currentIdentity) {

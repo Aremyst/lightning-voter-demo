@@ -1,5 +1,5 @@
 angular.module('app').component('createNewSession', {
-  templateUrl: '/home/createNewSession.html',
+  templateUrl: './createNewSession.html',
   bindings: {
     userSessions: '='
   },

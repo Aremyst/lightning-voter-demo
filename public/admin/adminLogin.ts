@@ -1,5 +1,5 @@
 angular.module('app').component('adminLogin', {
-  templateUrl: '/admin/adminLogin.html',
+  templateUrl: './adminLogin.html',
   // Same thing as 'scope' or 'bindToController'.
   bindings: {
   },
