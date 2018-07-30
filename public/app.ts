@@ -18,16 +18,6 @@ app.run(function($rootScope, $location) {
   })
 });
 
-// Execute Angular Bootstrapping when HTML is fully rendered.
-// angular.element(document).ready() is similar to $document.ready().
-angular.element(document).ready(() => {
-  // 'document' is just a JS variable defined by browser.
-  //   It's a DOM element, same as $(document).get(0).
-  //   'document.body' is a <body> DOM element.
-  // 'app' - name of the main module.
-  angular.bootstrap(document.body, ['app']);
-});
-
 app.config(['$locationProvider', function($locationProvider) {
   // Change URL's hashbang #! into #
   $locationProvider.hashPrefix('');

@@ -16,7 +16,9 @@ module.exports = {
   entry: {
     // Reference file, which contains all AngularJS files.
     // ./ because Webpack is executed from the root.
-    'ng1': './public/index.ts'
+    'ng1': './public/index.ts',
+    // Tell Webpack to build Angular2 application
+    'app': './public/main.ts'
   },
 
   // Configure output
@@ -94,6 +96,14 @@ module.exports = {
       'process.env': {
         'ENV': JSON.stringify(ENV)
       }
-    })
+    }),
+
+    // This fixes Webpack build warning
+    //     "core.es5.js Critical dependency: the request of a dependency is an expression..."
+    new webpack.ContextReplacementPlugin(
+      /angular(\\|\/)core(\\|\/)@angular/,
+      helpers.root('./src'),
+      {}
+    )
   ]
 };
