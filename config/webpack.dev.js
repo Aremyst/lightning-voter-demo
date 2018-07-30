@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const helpers = require('./helpers');
 // HTML Webpack Plugin. This is one of the NPM packages.
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Set Environment to "development", so that we know know that it's Dev build.
 const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
@@ -14,6 +15,10 @@ const ENV = process.env.NODE_ENV = process.env.ENV = 'development';
 module.exports = {
   // Entry point for Webpack
   entry: {
+    // Bundle for polyfills only
+    'polyfills': './public/polyfills.ts',
+    // Angular2 and Vendor files
+    'vendor': './public/vendor.ts',
     // Reference file, which contains all AngularJS files.
     // ./ because Webpack is executed from the root.
     'ng1': './public/index.ts',
@@ -70,6 +75,16 @@ module.exports = {
       minChunks: Infinity
     }),
 
+    // We'll put common libraries here
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      // Only pull from these 2 chunks:
+      // All libraries, which are the common between these 2 bundles will end up in 'vendor' bundle.
+      chunks: ['vendor', 'app'],
+      // If library is used in at least two bundles, it will go here
+      minChunks: 2
+    }),
+
     // Plugin for Source Maps
     new webpack.SourceMapDevToolPlugin({
       // Standard settings.
@@ -87,7 +102,8 @@ module.exports = {
     // Webpack will write into index.thml all bundles it creates.
     new HtmlWebpackPlugin({
       // HTML Template, that we're going to use
-      template: 'config/index.html'
+      template: 'config/index.html',
+      chunks: ['app']
     }),
 
     // Plugin, which helps Webpack to know about Environment.
@@ -104,6 +120,11 @@ module.exports = {
       /angular(\\|\/)core(\\|\/)@angular/,
       helpers.root('./src'),
       {}
-    )
+    ),
+
+    // Create report about bundles sizes
+    // new BundleAnalyzerPlugin({
+    //   analyzerMode: 'static'
+    // })
   ]
 };
