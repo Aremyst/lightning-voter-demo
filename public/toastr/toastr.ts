@@ -1,3 +1,5 @@
+declare var toastr;
+
 // Service wrapper around global 'toastr' variable.
 (function() {
   // Create 'toastr' module.

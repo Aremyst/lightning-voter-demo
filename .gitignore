@@ -27,3 +27,4 @@ public/sessions/sessionDetail.js
 public/toastr/toastr.js
 public/sessions/sessionDetailWithVotes.js
 public/routes.js
+dist/
