@@ -6,6 +6,7 @@ const webpack = require('webpack');
 const helpers = require('./helpers');
 // HTML Webpack Plugin. This is one of the NPM packages.
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// Bundle Analyzer Plugin. Used to generate HTML page(after the build), which shows bundles hierarchy and sizes.
 var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // Set Environment to "development", so that we know know that it's Dev build.
